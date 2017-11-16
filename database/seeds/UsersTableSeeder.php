@@ -14,11 +14,11 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
     	 // $this->assertDatabaseMissing('users', [
-      //           'email' => 'boesch@estoppey-addor.ch'
+      //           'email' => 'boesch@example.org'
       //       ]);
 
     	User::create([
-    		'email' => 'boesch@estoppey-addor.ch',
+    		'email' => 'boesch@example.org',
     		'name' => 'Jan Boesch',
     		'password' => bcrypt('123456')
     	]);
