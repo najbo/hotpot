@@ -37,7 +37,9 @@ class SensordataController extends Controller
     public function store(Request $request)
     {
 
+        // lecture depuis Electric Imp
          $sensor = $request->input('sensor');
+         
          $temp1 = $request->input('temp1');
          
          Sensordata::create([
