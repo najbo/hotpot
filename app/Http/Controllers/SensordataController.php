@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Sensordata;
 use Illuminate\Http\Request;
 
+
 class SensordataController extends Controller
 {
     /**
@@ -36,8 +37,19 @@ class SensordataController extends Controller
     public function store(Request $request)
     {
 
-         $name = $request->input('name');
-         dd($name);
+         $sensor = $request->input('sensor');
+         $temp1 = $request->input('temp1');
+         
+         Sensordata::create([
+            'sensor_id' => 1,
+            'data' => $temp1,
+            'recorded_at' => now() // Carbon::now()->toDateTimeString()
+            // 'archived' => 0
+         ]);
+         
+         //dd($_SERVER);
+         dd('done !');
+
         return view('sensordata.store');
     }
 
