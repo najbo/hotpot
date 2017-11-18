@@ -11,6 +11,7 @@
 |
 */
 
+
 Route::get('/', 'HomepageController@index')->name('homepage');
 Route::get('sensordata/insert', 'SensordataController@store')->name('sensor_store');
 

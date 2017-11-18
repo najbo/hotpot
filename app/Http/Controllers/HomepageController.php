@@ -10,6 +10,9 @@ class HomepageController extends Controller
      public function index()
     {
     	// Page principale du projet
-        return view('homepage');
+
+    	$datas = \App\Sensordata::ShowLast24h()->get();
+
+        return view('homepage',compact('datas'));
     }
 }

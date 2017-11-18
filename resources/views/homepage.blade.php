@@ -23,18 +23,25 @@
              <div class="col-md-12">
 
                 <div id="temps_div"></div>
-                <?php
                 
-
-
+                
+<?php
 
 $temperatures = Lava::DataTable();
 
 $temperatures->addDateColumn('Date')
-             ->addNumberColumn('Max Temp')
-             ->addNumberColumn('Mean Temp')
-             ->addNumberColumn('Min Temp')
-             ->addRow(['2014-10-1',  67, 65, 62])
+             //->addNumberColumn('Max Temp')
+             //->addNumberColumn('Mean Temp')
+             ->addNumberColumn('Temp.');
+
+             foreach ($datas as $data) {
+                $temperatures->addRow(array(
+                    $data->recorded_at,
+                    $data->data
+            ));
+             }
+
+ /*            ->addRow(['2014-10-1',  67, 65, 62])
              ->addRow(['2014-10-2',  68, 65, 61])
              ->addRow(['2014-10-3',  68, 62, 55])
              ->addRow(['2014-10-4',  72, 62, 52])
@@ -51,7 +58,7 @@ $temperatures->addDateColumn('Date')
              ->addRow(['2014-10-15', 76, 72, 68])
              ->addRow(['2014-10-16', 71, 66, 60])
              ->addRow(['2014-10-17', 72, 66, 60])
-             ->addRow(['2014-10-18', 63, 62, 62]);
+             ->addRow(['2014-10-18', 63, 62, 62]);*/
 
 Lava::LineChart('Temps', $temperatures, [
     'title' => 'Température hotpot'
