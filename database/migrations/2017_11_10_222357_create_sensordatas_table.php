@@ -20,7 +20,7 @@ class CreateSensordatasTable extends Migration
             $table->decimal('data',5,2);
             $table->dateTime('recorded_at')->nullable();
             $table->boolean('archived')->default(0);
-            $table->timestamps();
+            // $table->timestamps();
         });
     }
 
