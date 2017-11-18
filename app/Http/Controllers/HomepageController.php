@@ -11,6 +11,7 @@ class HomepageController extends Controller
     {
     	// Page principale du projet
 
+    	// Retrouver les températures des dernières 24 heures
     	$datas = \App\Sensordata::ShowLast24h()->get();
 
         return view('homepage',compact('datas'));
