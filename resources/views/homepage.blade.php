@@ -46,7 +46,8 @@ $temperatures->addDateColumn('Date')
              ->addRow(['2014-10-18', 63, 62, 62]);*/
 
 Lava::LineChart('Temps', $temperatures, [
-    'title' => 'Température hotpot'
+    'title' => 'Température hotpot',
+    'height' => 500
 ]);
 
 
